@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Digimon Rumble Arena",
+    "id": "SLES-03841",
+    "boot_exe": "SLES_038.41"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).cue",
+    "bin_name": "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 268478448,
+      "md5": "37de6fb3a1aa01dde58ba6126b53677a",
+      "sha1": "256f057d2295c820bdf96883f576a2e4fc7cfa01",
+      "crc32": "562d5d81"
+    },
+    "disc_fp": "bad63e0ecd04b4c81795fb2bf887764e9547b045cd1c4826c89adeb7a812af36"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8003E304",
+    "text_size": "0x0010C800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1011,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

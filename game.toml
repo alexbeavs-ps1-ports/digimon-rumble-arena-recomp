@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Digimon Rumble Arena"
+id = "SLES-03841"
+players = 1
+exe = "disc/SLES_038.41"
+disc = "disc/Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).cue"
+discs = ["disc/Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).cue"]
+disc_serials = ["SLES-03841"]
+load_address = "0x80010000"
+entry_pc = "0x8003E304"
+text_size = "0x0010C800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).bin"
+cue_name = "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).cue"
+boot_exe = "SLES_038.41"
+known_sizes = [268478448]
+known_md5 = [
+  "37de6fb3a1aa01dde58ba6126b53677a",
+]
+known_sha1 = [
+  "256f057d2295c820bdf96883f576a2e4fc7cfa01",
+]
+known_crc32 = [
+  "562d5d81",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Digimon Rumble Arena Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "bad63e0ecd04b4c81795fb2bf887764e9547b045cd1c4826c89adeb7a812af36"

@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "digimon-rumble-arena-psx",
+  "name": "Digimon Rumble Arena",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "digimon-rumble-arena-recomp",
+  "rom_identity": {
+    "crc32": [
+      "562d5d81"
+    ],
+    "md5": [
+      "37de6fb3a1aa01dde58ba6126b53677a"
+    ],
+    "sha1": [
+      "256f057d2295c820bdf96883f576a2e4fc7cfa01"
+    ],
+    "disc_serials": [
+      "SLES-03841"
+    ],
+    "sizes": [
+      268478448
+    ],
+    "filenames": [
+      "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).cue",
+      "Digimon Rumble Arena (Europe) (En,Fr,De,Es,It).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "bad63e0ecd04b4c81795fb2bf887764e9547b045cd1c4826c89adeb7a812af36"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/digimon-rumble-arena-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "digimon-rumble-arena-*-windows-x64.zip",
+      "linux-x64": "digimon-rumble-arena-*-linux-x64.zip",
+      "macos-arm64": "digimon-rumble-arena-*-macos-arm64.zip",
+      "macos-x64": "digimon-rumble-arena-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "digimon_rumble_arena.exe",
+    "linux": "digimon_rumble_arena",
+    "macos": "digimon_rumble_arena"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/digimon-rumble-arena-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
